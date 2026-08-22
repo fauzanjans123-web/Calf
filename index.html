@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALF Coffee — Digital Menu & Order</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <h1 class="logo">☕ CALF ORDER</h1>
+    </header>
+
+    <main class="container">
+        
+        <!-- SECTION MENU -->
+        <section class="menu-section">
+            <h2>Pilih Kopi Siap Minum</h2>
+            <p class="subtitle">Produk kemasan racikan segar, tinggal order & nikmati!</p>
+
+            <div class="menu-grid">
+    
+    <!-- 1. Calf Premium Cup -->
+    <div class="card">
+        <div class="badge">BEST SELLER</div>
+        <img src="image/calf-premium.jpg" alt="Calf Signature" class="product-img">
+        <div class="card-info">
+            <h3>Calf Premium Cup</h3>
+            <p>Kopi susu gula aren khas CALF. Creamy & bold.</p>
+            <div class="card-footer">
+                <span class="price">Rp 15.000</span>
+                <button class="add-btn" onclick="addToCart('Calf Premium CUP', 15000)">+ Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Matcha Latte -->
+    <div class="card">
+        <img src="image/matcha-latte.jpg" alt="Americano" class="product-img">
+        <div class="card-info">
+            <h3>Matcha Latte</h3>
+            <p>Double shot arabica. Segar dan pas buat fokus kerja.</p>
+            <div class="card-footer">
+                <span class="price">Rp 18.000</span>
+                <button class="add-btn" onclick="addToCart('Matcha Latte', 18000)">+ Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Claf Chocolate -->
+    <div class="card">
+        <img src="image/calf-chocolate.jpg" alt="Creamy Latte" class="product-img">
+        <div class="card-info">
+            <h3>Calf Chocolate</h3>
+            <p>Perpaduan espresso halus dengan susu segar pilihan.</p>
+            <div class="card-footer">
+                <span class="price">Rp 25.000</span>
+                <button class="add-btn" onclick="addToCart('Calf Chocolate', 25000)">+ Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Smooth Vanila Pecan (BARU) -->
+    <div class="card">
+        <img src="image/smooth-vanila.jpg" alt="Hazelnut Latte" class="product-img">
+        <div class="card-info">
+            <h3>Smooth Vanila Pecan</h3>
+            <p>Latte dengan sentuhan rasa kacang hazelnut yang manis.</p>
+            <div class="card-footer">
+                <span class="price">Rp 25.000</span>
+                <button class="add-btn" onclick="addToCart('Smooth Vanila Pecan', 25000)">+ Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Calf Premium CAN (BARU) -->
+    <div class="card">
+        <img src="image/calf.jpg" alt="Cappuccino" class="product-img">
+        <div class="card-info">
+            <h3>Calf Premium CAN</h3>
+            <p>Espresso klasik dengan foam susu tebal yang lembut.</p>
+            <div class="card-footer">
+                <span class="price">Rp 23.000</span>
+                <button class="add-btn" onclick="addToCart('Calf Premium CAN', 23000)">+ Tambah</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+        <!-- SECTION KERANJANG -->
+        <section class="cart-section" id="cartSection">
+            <div class="cart-card">
+                <h2>🛒 Keranjang Pesanan</h2>
+                
+                <div id="cartItems" class="cart-items">
+                    <p class="empty-text">Keranjang masih kosong. Pilih menu di atas!</p>
+                </div>
+
+                <div class="cart-divider"></div>
+
+                <div class="cart-summary">
+                    <div class="total-row">
+                        <span>Total Pembayaran:</span>
+                        <strong id="cartTotal">Rp 0</strong>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custName">Nama Pemesan *</label>
+                        <input type="text" id="custName" placeholder="Contoh: Dimas">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="custNote">Catatan / Posisi Diri *</label>
+                        <input type="text" id="custNote" placeholder="Contoh: Depan Kantor BPKP">
+                    </div>
+
+                    <button class="checkout-btn" onclick="checkoutWA()">Kirim Pesanan via WhatsApp 🚀</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FLOATING BAR UNTUK HP -->
+    <div class="mobile-floating-cart" id="mobileCartBar" onclick="scrollToCart()">
+        <div class="floating-info">
+            <span id="mobileCartCount">0 Menu</span>
+            <strong id="mobileCartTotal">Rp 0</strong>
+        </div>
+        <span class="floating-action">Lanjut Checkout ➔</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

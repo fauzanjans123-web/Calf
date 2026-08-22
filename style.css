@@ -1,0 +1,279 @@
+:root {
+    --blue-dark: #061A42;
+    --blue-main: #123D8F;
+    --red-main: #D71920;
+    --red-hover: #F2383F;
+    --white: #F7F8FA;
+    --gray-light: #CBD6E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--blue-dark);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 6%;
+    background: rgba(4, 18, 46, 0.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* Container diatur agar mengisi sisa tinggi layar */
+.container {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    flex: 1;
+    align-items: start;
+}
+
+.menu-section h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: var(--gray-light);
+    margin-bottom: 25px;
+}
+
+.menu-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Card Menu */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    padding: 14px;
+    position: relative;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.product-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.card-info {
+    flex: 1;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--red-main);
+    font-size: 8px;
+    font-weight: 800;
+    padding: 3px 6px;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.card p {
+    font-size: 11px;
+    color: var(--gray-light);
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-weight: 700;
+    color: #39E27D;
+    font-size: 14px;
+}
+
+.add-btn {
+    background: var(--red-main);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Keranjang */
+.cart-card {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 22px;
+    backdrop-filter: blur(10px);
+}
+
+.cart-card h2 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.empty-text {
+    font-size: 12px;
+    color: var(--gray-light);
+    font-style: italic;
+}
+
+.cart-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.cart-item-controls button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 3px;
+}
+
+.cart-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.total-row strong {
+    color: #39E27D;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 12px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 10px;
+    color: var(--gray-light);
+    margin-bottom: 4px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #25D366;
+    color: white;
+    border: none;
+    padding: 11px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 12px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.mobile-floating-cart {
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    background: #25D366;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    z-index: 999;
+    cursor: pointer;
+}
+
+.floating-info span {
+    display: block;
+    font-size: 10px;
+    opacity: 0.9;
+}
+
+.floating-info strong {
+    font-size: 14px;
+}
+
+.floating-action {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+@media (max-width: 850px) {
+    body {
+        padding-bottom: 80px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        padding: 20px 15px;
+    }
+
+    .mobile-floating-cart {
+        display: flex;
+    }
+}
